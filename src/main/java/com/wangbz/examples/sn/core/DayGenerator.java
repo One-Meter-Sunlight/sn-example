@@ -37,6 +37,7 @@ public class DayGenerator implements Generator {
         synchronized (this) {
             if (now.before(this.day.getExpiry()) && ++this.currentIndex > endIndex) {
                 fetch();
+                ++this.currentIndex;
             }
             date = this.day.getDate();
             sequence = this.currentIndex;
